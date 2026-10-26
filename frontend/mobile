@@ -1,0 +1,118 @@
+// mobile/App.js या मोबाइल कंपोनेंट
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
+import { STORE_NAME, API_BASE_URL } from '../shared/config';
+
+export default function MobileApp() {
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    if (!phone || !password) {
+      Alert.alert("एरर", "कृपया मोबाइल नंबर और पासवर्ड भरें हुकुम!");
+      return;
+    }
+    Alert.alert("सफलता", `${STORE_NAME} में आपका स्वागत है हुकुम!`);
+  };
+
+  return (
+    <View style={styles.container}>
+      {/* 👈 'LS' (Logo)*/}
+      <View style={styles.logoContainer}>
+        <Image 
+          source={require('../assets/logo.png')} 
+          style={styles.logoImage} 
+          resizeMode="contain"
+        />
+      </View>
+      
+      <Text style={styles.title}>LuxuryStore</Text>
+      <Text style={styles.subtitle}>वेंडर मोबाइल पोर्टल</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="मोबाइल नंबर डालें"
+        placeholderTextColor="#888"
+        keyboardType="phone-pad"
+        value={phone}
+        onChangeText={setPhone}
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="पासवर्ड डालें"
+        placeholderTextColor="#888"
+        secureTextEntry={true}
+        value={password}
+        onChangeText={setPassword}
+      />
+
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>लॉगिन करें</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#121212',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  logoContainer: {
+    width: 90,
+    height: 90,
+    borderRadius: 20,
+    overflow: 'hidden',
+    borderWidth: 2,
+    borderColor: '#d4af37',
+    marginBottom: 15,
+    backgroundColor: '#1e1e1e',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoImage: {
+    width: '100%',
+    height: '100%',
+  },
+  title: {
+    fontSize: 22,
+    color: '#fff',
+    fontWeight: 'bold',
+    letterSpacing: 1,
+    marginBottom: 5,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#aaa',
+    marginBottom: 30,
+  },
+  input: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#1e1e1e',
+    borderRadius: 8,
+    paddingHorizontal: 15,
+    color: '#fff',
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: '#333',
+  },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#d4af37',
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#121212',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});

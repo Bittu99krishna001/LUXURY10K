@@ -1,0 +1,104 @@
+/* Container Layout */
+.homeContainer {
+  width: 100%;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Search Box */
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.searchBar {
+  flex: 1;
+  background-color: #191612;
+  border-radius: 14px;
+  border: 1.5px solid #d4af37;
+  padding: 12px 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.9), inset 0 2px 5px rgba(255,215,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Photo Banner Grid (आपकी इमेज की तरह कार्ड्स) */
+.categorySectionTitle {
+  color: #ffd700;
+  text-align: center;
+  margin: 30px 0 15px 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.categoryCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.categoryCard {
+  background: #181512;
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+
+.categoryCard:hover {
+  transform: translateY(-5deg);
+  box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
+}
+
+.categoryCardImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.categoryCardTitle {
+  color: #e0c880;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Products Grid */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.productCard {
+  text-align: center;
+  background-color: #161310;
+  padding: 16px 12px;
+  border-radius: 16px;
+  border: 1.5px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}

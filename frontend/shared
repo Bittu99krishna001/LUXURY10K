@@ -1,0 +1,26 @@
+// ==================== SHARED CONFIG & CONSTANTS ====================
+// यह फाइल आपके Frontend (वेबसाइट/मोबाइल ऐप) और Backend दोनों के लिए कॉमन डेटा शेयर करेगी हुकुम।
+
+export const STORE_CONFIG = {
+  storeName: "LuxuryStore",
+  tagline: "Premium Menswear & Collection",
+  location: "Jodhpur, Rajasthan",
+  supportEmail: "luxurystore10k@gmail.com",
+  currency: "₹"
+};
+
+// बैकएंड API का कॉमन पाथ
+export const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://your-production-domain.com/api' 
+  : 'http://localhost:5000/api';
+
+// कॉमन वैलिडेशन फंक्शंस (जो मोबाइल और वेब दोनों पर काम आएंगे)
+export const validatePhone = (phone) => {
+  const phoneRegex = /^[0-9]{10}$/;
+  return phoneRegex.test(phone);
+};
+
+export const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
